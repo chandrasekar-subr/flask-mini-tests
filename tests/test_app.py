@@ -1,9 +1,9 @@
 import json
 
 
-def test_index(app, client):
+def test_status_code(app, client):
     del app
-    res = client.get('/')
+    res = client.get('/empdb/employee')
     assert res.status_code == 200
-    expected = {'hello': 'world'}
-    assert expected == json.loads(res.get_data(as_text=True))
+    # expected = {'hello': 'world'}
+    # assert expected == json.loads(res.get_data(as_text=True))
